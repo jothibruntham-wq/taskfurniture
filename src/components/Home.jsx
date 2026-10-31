@@ -51,6 +51,42 @@ export default function Home() {
     },
   ];
 
+  const offers = [
+    {
+      name: "Luxury Sofa Set",
+      price: "₹45,999",
+      oldPrice: "₹65,999",
+      discount: "30% OFF",
+      image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800",
+      tag: "BEST SELLER"
+    },
+    {
+      name: "Modern Dining ",
+      price: "₹28,999",
+      oldPrice: "₹39,999",
+      discount: "25% OFF",
+      image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800",
+      tag: "LIMITED DEAL"
+    },
+    {
+      name: "Premium Bedroom",
+      price: "₹55,999",
+      oldPrice: "₹79,999",
+      discount: "35% OFF",
+      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800",
+      tag: "HOT OFFER"
+    },
+    {
+      name: "Designer Lounge ",
+      price: "₹12,999",
+      oldPrice: "₹18,999",
+      discount: "32% OFF",
+      image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800",
+      tag: "SPECIAL DEAL"
+    }
+
+  ];
+
   return (
     <div className="furni-page">
 
@@ -79,7 +115,7 @@ export default function Home() {
           >
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="#home">Home</a>
+                <a className="nav-link " href="#home">Home</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#about">About</a>
@@ -88,8 +124,12 @@ export default function Home() {
                 <a className="nav-link" href="#products">Shop</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#collections">Collections</a>
+                <a className="nav-link" href="#collections">Diwali Collections</a>
               </li>
+                            <li className="nav-item">
+                <a className="nav-link" href="#collections">Diwali Offer</a>
+              </li>
+
               <li className="nav-item">
                 <a className="nav-link" href="#contact">Contact</a>
               </li>
@@ -598,6 +638,129 @@ export default function Home() {
         </div>
       </section>
 
+       <div className="diwali-page">
+
+      {/* HERO SECTION */}
+      <section className="diwali-hero">
+        <div className="diwali-particles">✦ ✧ ✨ ✦ ✧ ✨</div>
+
+        <div className="hero-content" data-aos="fade-up">
+          <span className="hero-label">✦ FESTIVAL OF LIGHTS ✦</span>
+
+          <h1>
+            GRAND <span>DIWALI</span>
+            <br /> FURNITURE SALE
+          </h1>
+
+          <p>
+            Celebrate this Diwali with beautiful furniture
+            and transform your home into a dream space.
+          </p>
+
+          <div className="hero-discount">
+            <strong>UP TO</strong>
+            <h2>50% OFF</h2>
+            <span>ON PREMIUM FURNITURE</span>
+          </div>
+
+          <a href="#offers" className="diwali-btn">
+            EXPLORE OFFERS <span>→</span>
+          </a>
+        </div>
+
+        <div className="hero-image" data-aos="zoom-in">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000"
+            alt="Luxury furniture living room"
+          />
+        </div>
+
+        <div className="floating-diya diya-one">🪔</div>
+        <div className="floating-diya diya-two">✨</div>
+      </section>
+
+      {/* BENEFITS */}
+      <section className="diwali-benefits">
+        <div data-aos="fade-up">
+          <span>🚚</span>
+          <h3>Free Delivery</h3>
+          <p>On selected orders</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+          <span>💳</span>
+          <h3>Easy EMI</h3>
+          <p>Flexible payment plans</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="200">
+          <span>🎁</span>
+          <h3>Special Gifts</h3>
+          <p>Festive surprise gifts</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="300">
+          <span>⭐</span>
+          <h3>Premium Quality</h3>
+          <p>Made for your dream home</p>
+        </div>
+      </section>
+
+      {/* OFFERS */}
+      <section className="offer-section" id="offers">
+
+        <div className="offer-heading" data-aos="fade-up">
+          <span> FESTIVE COLLECTION </span>
+          <h2>Exclusive <b>Diwali Offers</b></h2>
+          <p>Bring home happiness with our special festive deals.</p>
+        </div>
+
+        <div className="offer-grid">
+          {offers.map((item, index) => (
+            <div
+              className="offer-card"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              key={item.name}
+            >
+              <div className="offer-img">
+                <img src={item.image} alt={item.name} />
+                <span className="discount">{item.discount}</span>
+                <span className="offer-tag">{item.tag}</span>
+              </div>
+
+              <div className="offer-details">
+                <h3>{item.name}</h3>
+
+                <div className="offer-price">
+                  <strong>{item.price}</strong>
+                  <del>{item.oldPrice}</del>
+                </div>
+
+                <button
+                  className="buy-btn"
+                  onClick={() => alert(`You selected ${item.name}!`)}
+                >
+                  SHOP NOW ↗
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* BANNER */}
+      <section className="diwali-banner" data-aos="zoom-in">
+        <div>
+          <span>🪔 MAKE YOUR HOME SHINE 🪔</span>
+          <h2>This Diwali, Bring Home Luxury!</h2>
+          <p>Beautiful furniture. Amazing prices. Happy celebrations.</p>
+          <a href="#offers">GRAB YOUR DEAL →</a>
+        </div>
+      </section>
+
+    </div>
+
       {/* FOOTER */}
 
       <footer className="furni-footer">
@@ -625,13 +788,6 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="col-lg-2 col-6">
-              <h5>Explore</h5>
-              <a href="#home">Home</a>
-              <a href="#about">About Us</a>
-              <a href="#products">Shop</a>
-              <a href="#collections">Collections</a>
-            </div>
 
             <div className="col-lg-3 col-6">
               <h5>Categories</h5>
